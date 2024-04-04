@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify Your Veggies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">   
+</head>
+<body>
+    <h1>Classify Your Veggies</h1> <!-- Title changed -->
+    
+    <!-- Box to display uploaded image -->
+    <div class="image-box">
+        <img id="uploaded-image" src="#" alt="Uploaded Image">
+    </div>
+
+    <!-- Form to upload image -->
+    <div class="button-container">
+        <form id="upload-form" action="/predict" method="post" enctype="multipart/form-data">
+            <!-- Choose File button -->
+            <label for="file-upload" class="custom-button custom-button-label">Choose File</label>
+            <input id="file-upload" type="file" name="file" accept=".png, .jpg, .jpeg" onchange="previewImage(event)">
+            <input type="submit" value="Classify" class="custom-button">
+        </form>
+        <p>{{ prediction_text }}</p>
+    </div>
+
+    <script>
+        // Function to preview uploaded image
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var uploadedImage = document.getElementById('uploaded-image');
+                uploadedImage.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+    </script>
+</body>
+</html>

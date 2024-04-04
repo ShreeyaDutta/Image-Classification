@@ -1,0 +1,28 @@
+body {
+    background-image: url("BACKGROUND.png"); /* Replace 'BACKGROUND.png' with the actual path to your image */
+    background-size: cover; /* Ensures the background image covers the entire body */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    text-align: center;
+    color: white; /* Set text color to white */
+}
+
+.image-box {
+    width: 450px;
+    height: 400px;
+    margin: 40px auto; /* Center the box */
+    border: 2px solid white;
+    overflow: hidden; /* Hide overflow content */
+}
+
+#uploaded-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills the box */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Rest of your existing styles for buttons and other elements */
