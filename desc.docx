@@ -1,0 +1,49 @@
+Feature Extraction Precision for each
+
+color hist 88%
+color 79%
+edge 42%
+gabor 75%
+haralick 21%
+hog 71%
+lbp 67%
+sobel 8%
+surface blemish 67%
+texture analysis 46% 
+
+Selected 
+
+edge (42) color hist (88) lbp (67)
+
+color histogram (88), color (79), texture analysis (46), and edge (42)
+
+FILES
+
+xgb traintestsplit
+color hist  edge  texture gradient 
+xgb standard
+acc 99.1
+test 85.9
+
+xgb
+color hist  edge  texture gradient 
+xgb standard
+test 92.5
+
+
+xgb multiclass
+color hist  edge  texture gradient 
+xgb objective='multi:softmax', max_depth=7
+test 92.2
+
+random forest
+edge color hist lbp 
+rf standard 
+acc 98.9
+test 83.8
+
+random forest entropy
+edge color hist lbp 
+rf entropy 70
+acc 97
+test 82
